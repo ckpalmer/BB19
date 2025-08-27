@@ -1,0 +1,13 @@
+{
+  "meta": {"version": "1.0", "updated_utc": "2025-08-27T08:30:00Z"},
+  "rules": {
+    "protein_g": 300,
+    "fat_g_baseline": 90,
+    "carb_g_baseline": 473,
+    "carb_scaler_next_day": "±25–50 g based on Move/compliance",
+    "sat_iifym": true,
+    "finish_by": "20:00",
+    "heavy_fibre_before": "18:00"
+  },
+  "notes": "P5 is computed nightly using Move + compliance and printed; no persistent logs needed here."
+}
