@@ -1,0 +1,59 @@
+{
+  "meta": {"version": "1.0", "updated_utc": "2025-08-27T08:30:00Z", "stack_policy": "newest-first"},
+  "cue_standard": "Load(kg), Target reps, Tempo, Rest(min), Hold(s), Stance/Handle, one tight cue.",
+  "global_rules": [
+    "Absolute targets; no ranges.",
+    "Straps mandatory where grip could limit target.",
+    "Smith counterbalance treated as 0 kg when encoded."
+  ],
+  "tokens": [
+    {"token_id":"TK-CP-INCL-1","name":"HS Super Incline Press","head_id":"Chest-Upper","kit":"Hammer Strength Super Incline","stack_min":0,"stack_step":5,"preferred":true,"notes":"Primary upper chest"},
+    {"token_id":"TK-FLY-IA","name":"Plate-Loaded Pec Fly","head_id":"Chest-Mid","kit":"Independent-arms plate fly","stack_min":0,"stack_step":5,"preferred":true,"notes":"Lengthened hold :20 on top/backoffs"},
+    {"token_id":"TK-LAT-RAISE","name":"Panatta Multi-Flight (Lateral)","head_id":"Delts-Side","kit":"Panatta Multi-Flight","stack_min":0,"stack_step":5,"preferred":true,"notes":""},
+    {"token_id":"TK-TRI-OH-1","name":"Panatta Seated OH Extension","head_id":"Triceps-Long","kit":"Panatta OH","stack_min":0,"stack_step":5,"preferred":true,"notes":""},
+    {"token_id":"TK-TRI-OH-2","name":"Cable OH Rope (dual)","head_id":"Triceps-Long","kit":"Cable low pulley","stack_min":2.5,"stack_step":2.5,"preferred":false,"notes":"Facing away"},
+    {"token_id":"TK-SERRATUS","name":"Landmine Press (kneel)","head_id":"Serratus/Obliques","kit":"Landmine","stack_min":0,"stack_step":5,"preferred":true,"notes":"Scapular glide"},
+    {"token_id":"TK-RACKPULL-SMITH","name":"Smith Rack Pull (mid-shin)","head_id":"Erectors","kit":"Smith (bar=0kg)","stack_min":0,"stack_step":10,"preferred":true,"notes":""},
+    {"token_id":"TK-REARDELT-CYBEX","name":"Cybex Reverse Fly (pin)","head_id":"Delts-Rear","kit":"Cybex reverse fly","stack_min":13.5,"stack_step":9,"preferred":true,"notes":"Shared stack"},
+    {"token_id":"TK-SEATED-ROW","name":"Seated Cable Row (neutral)","head_id":"Back-Upper","kit":"Seated cable row","stack_min":5,"stack_step":5,"preferred":true,"notes":"Midline elbow path"},
+    {"token_id":"TK-PULLOVER-HS","name":"Hammer Strength Pullover","head_id":"Lats","kit":"HS pullover","stack_min":10,"stack_step":5,"preferred":true,"notes":""},
+    {"token_id":"TK-BI-LONG-BAYES","name":"Bayesian Curl (cable)","head_id":"Biceps-Long","kit":"Cable (single arm)","stack_min":2.5,"stack_step":2.5,"preferred":true,"notes":"Tactile touch allowed"},
+    {"token_id":"TK-SHRUG-BOX","name":"Trap Box/Hex Shrug","head_id":"Traps","kit":"Trap box","stack_min":10,"stack_step":5,"preferred":true,"notes":"Straps mandatory"},
+    {"token_id":"TK-SHRUG-SMITH","name":"Smith Shrug","head_id":"Traps","kit":"Smith (bar=0kg)","stack_min":10,"stack_step":5,"preferred":false,"notes":""},
+    {"token_id":"TK-HAM-SEATED-ATL","name":"Seated Curl (Atlantis, pin)","head_id":"Hamstrings","kit":"Atlantis seated curl","stack_min":5,"stack_step":5,"preferred":true,"notes":"Both legs"},
+    {"token_id":"TK-HAM-PRONE-HS","name":"Prone Curl (HS, plate)","head_id":"Hamstrings","kit":"HS prone curl","stack_min":10,"stack_step":5,"preferred":true,"notes":"Isolateral"},
+    {"token_id":"TK-QUAD-PEND","name":"Pendulum Squat","head_id":"Quads","kit":"Pendulum","stack_min":10,"stack_step":5,"preferred":true,"notes":"Knee-friendly setup"},
+    {"token_id":"TK-GLUTE-DRIVE","name":"Nautilus Glute Drive","head_id":"Glutes","kit":"Nautilus glute drive","stack_min":10,"stack_step":5,"preferred":true,"notes":""},
+    {"token_id":"TK-CALF-STD","name":"Standing Calf Raise","head_id":"Calves","kit":"Standing calf","stack_min":10,"stack_step":5,"preferred":true,"notes":""},
+    {"token_id":"TK-CALF-SED","name":"Seated Calf Raise","head_id":"Calves","kit":"Seated calf","stack_min":10,"stack_step":5,"preferred":false,"notes":""},
+    {"token_id":"TK-ABS-LOW-HLR","name":"Hanging Leg Raise (PPT)","head_id":"Abs-Lower","kit":"Bar/Chair","stack_min":null,"stack_step":null,"preferred":true,"notes":"Posterior pelvic tilt"},
+    {"token_id":"TK-ABS-CYBEX","name":"Cybex Ab Crunch","head_id":"Abs-Upper","kit":"Cybex ab machine","stack_min":13.5,"stack_step":9,"preferred":true,"notes":"Arms stiff; crunch with abs"}
+  ],
+  "sets_stack": [
+    {
+      "date":"2025-08-26","session":"PULL","token_id":"TK-RACKPULL-SMITH",
+      "top_or_backoff":"TOP","load_kg":100,"reps":7,"RIR":0,"tempo":"2-1-1-1","rest_min":3,"hold_s":0,"rp":0,
+      "cue":"Hips through; lats tight; bar on shins.","head_id":"Erectors","notes":"Grip taxing — straps mandated."
+    },
+    {
+      "date":"2025-08-26","session":"PULL","token_id":"TK-REARDELT-CYBEX",
+      "top_or_backoff":"TOP","load_kg":25,"reps":14,"RIR":0,"tempo":"2-1-1-1","rest_min":2,"hold_s":20,"rp":3,
+      "cue":"Scap set; sweep wide; don’t unwind chest.","head_id":"Delts-Rear","notes":"Seat mid; stack step=9 kg."
+    },
+    {
+      "date":"2025-08-25","session":"PUSH","token_id":"TK-FLY-IA",
+      "top_or_backoff":"TOP","load_kg":80,"reps":17,"RIR":0,"tempo":"3-1-1-0","rest_min":2,"hold_s":20,"rp":3,
+      "cue":"Lead with elbows; 1–2s stretch pause.","head_id":"Chest-Mid","notes":"—"
+    },
+    {
+      "date":"2025-08-25","session":"PUSH","token_id":"TK-LAT-RAISE",
+      "top_or_backoff":"TOP","load_kg":60,"reps":13,"RIR":0,"tempo":"2-1-1-1","rest_min":2,"hold_s":0,"rp":3,
+      "cue":"Lead with medial delt; wrists soft.","head_id":"Delts-Side","notes":"—"
+    },
+    {
+      "date":"2025-08-25","session":"PUSH","token_id":"TK-SERRATUS",
+      "top_or_backoff":"TOP","load_kg":20,"reps":12,"RIR":0,"tempo":"2-0-1-1","rest_min":2,"hold_s":0,"rp":0,
+      "cue":"Glide; protract through top.","head_id":"Serratus/Obliques","notes":"First exposure; progressed after 8."
+    }
+  ]
+}
