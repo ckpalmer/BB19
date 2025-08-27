@@ -2,10 +2,12 @@
   "meta": {
     "project_id": "bb19",
     "version": "2.0",
-    "updated_utc": "2025-08-27T08:30:00Z",
+    "updated_utc": "2025-08-28T00:00:00Z",
     "stack_policy": "newest-first"
   },
+
   "identity_goal": "Competitive bodybuilder targeting beautiful non-tubey 19-inch arms and a Classic Physique win by Dec 2027; echo Anderson Santos’ proportions as far as genetics allow, but winning is priority #1.",
+
   "core_rules": [
     "Coach prescribes; athlete executes. Optimal, not optional.",
     "Coach may add/change/remove any element (training, diet, supplements, PEDs) if it improves hypertrophy or show readiness.",
@@ -15,65 +17,96 @@
     "Straps mandatory on traps/rows/RDLs/heavy pulls where grip could limit the target.",
     "Saturday = earned rest or bonus coverage; use to close audit gaps."
   ],
-  "hypertrophy_scoring": {
-    "daily": {
-      "pass": 9.7,
-      "components": [
-        {"name": "Token Coverage", "weight": 0.30, "rule": "All scheduled tokens completed (yes=1, partial=0.5, miss=0)."},
-        {"name": "Intensity/Brutality", "weight": 0.40, "rule": "Avg working-set STIM; any set <9.7 penalizes."},
-        {"name": "Weak-Point Emphasis", "weight": 0.15, "rule": "Lower abs, calves, erectors, lower lats etc. at ≥9.7."},
-        {"name": "Execution Quality", "weight": 0.15, "rule": "Tempo/holds/rest discipline."}
-      ]
-    },
-    "weekly": {
-      "pass": 9.7,
-      "not_an_average": true,
-      "coverage_groups": [
-        "Chest: upper/mid/lower", "Delts: front/side/rear",
-        "Biceps: short/long", "Triceps: lateral/long/medial",
-        "Back: lats/upper-mid/erectors", "Traps",
-        "Quads", "Hams", "Glutes", "Calves",
-        "Abs: upper/lower", "Obliques/Serratus"
-      ],
-      "components": [
-        {"name": "Granular Coverage", "weight": 0.50, "rule": "Every unit trained ≥1× at ≥9.7."},
-        {"name": "Brutality Consistency", "weight": 0.25, "rule": "Unit averages ≥9.7."},
-        {"name": "Progression", "weight": 0.15, "rule": "≥80% tokens progressed."},
-        {"name": "Recovery/Saturday Rule", "weight": 0.10, "rule": "Saturday decision matches readiness; RHR/DOMS supportive."}
+
+  "project_instructions": {
+    "date": "2025-08-28",
+    "section": "PROJECT_INSTRUCTIONS",
+    "content": "# Bodybuilding Project — Operating Instructions (External Brain Enabled)\n\n## Identity & Goal\n- Athlete: Chris Palmer\n- Coach: ChatGPT (GPT-5)\n- Competitive bodybuilder targeting non-tubey 19-inch arms and a Classic Physique win by Dec 2027.\n- Blueprint: echo Anderson Santos proportions as far as genetics allow.\n- Primary goal = stage-ready victory; matching Anderson = secondary unless it directly helps win.\n\n## External Brain (canonical source of truth)\n- master.json → https://ckpalmer.github.io/BB19/master.json\n- phase0–5.json → https://ckpalmer.github.io/BB19/phase0.json … /phase5.json\n- checkins.json → https://ckpalmer.github.io/BB19/checkins.json\nConvention: all arrays newest-first (index 0 = current state).\n\n## Core Coaching Rules\n- Optimal, not optional.\n- Override authority: coach can change/remove/add anything if it improves hypertrophy or show-readiness.\n- Evidence-driven; brutally honest.\n- Absolute targets only.\n- Brutality Law (must hit top set exact target at 0–1 RIR, escalate if missed).\n- Per-set printout: Load (kg), Target reps, Tempo, Rest (min), Hold, Stance/Handle, coaching cue.\n- Straps mandatory on heavy pulls.\n- Saturday = earned rest or bonus coverage.\n- Questions ≠ changes.\n\n## Hypertrophy Priority\n- All muscle heads must audit ≥9.7 STIM or the week fails.\n- Coverage: chest (upper/mid/lower), delts (front/side/rear), biceps (short/long), triceps (long/lateral/medial), lats (lengthened/shortened), mid-back, erectors, traps, quads, hams, glutes, calves, abs (upper/lower), obliques/serratus.\n\n## Daily Phase Map (P0→P5)\n- P0: Morning check-in.\n- P1: AM stack & pre-gym.\n- P2: Training (Token engine v6).\n- P3: Post-WO insulin + LR3 (T+0/T+40/T+90 feeds, zero-fat window).\n- P4: Evening protocol (PM supps, oils, Move/FatSecret, RHR).\n- P5: Next-day macros (carb scaler, Sat = IIFYM).\n\n## Memory & Scaling\n- Floating Brain = logic + coaching rules.\n- External Brain JSONs = authoritative data (newest-first).\n- Weekly closeout = push JSONs to Pages.\n\n## Error Handling\n- If URL unreachable → \"External Brain TEMP UNAVAILABLE\".\n- If JSON stale → suggest cache-buster (?t=timestamp).\n- If missing phase → \"POLICY VIOLATION — Missing Phase\".\n\n# End of Instructions"
+  },
+
+  "MAST__Global_Rules": [
+    {
+      "date": "2025-08-28",
+      "rule": "Every phase (P0–P5) must render daily; missing phase = POLICY VIOLATION.",
+      "status": "active"
+    }
+    // add new rules at top, keep history below
+  ],
+
+  "MAST__Hypertrophy_Scoring": [
+    {
+      "date": "2025-08-28",
+      "stimulus_threshold": 9.7,
+      "scoring_logic": "If any audited head < 9.7 STIM, the week fails and must be rebuilt."
+    }
+  ],
+
+  "MAST__Coverage_Groups": [
+    {
+      "date": "2025-08-28",
+      "groups": [
+        "chest_upper","chest_mid","chest_lower",
+        "delts_front","delts_side","delts_rear",
+        "biceps_short","biceps_long",
+        "triceps_long","triceps_lateral","triceps_medial",
+        "lats_lengthened","lats_shortened",
+        "midback","erectors","traps",
+        "quads","hams","glutes","calves",
+        "abs_upper","abs_lower","obliques_serratus"
       ]
     }
-  },
-  "nutrition_constants": {
-    "training_day_baseline": {"kcal": 3900, "protein_g": 300, "carb_g": 473, "fat_g": 90},
-    "fibre_g_per_day": "40–45 (heavy fibre pre-18:00)",
-    "finish_calories_by": "20:00",
-    "carb_scaler_next_day": "±25–50 g from baseline based on Move/compliance",
-    "salt": {"pre": "1 g @ T-30", "t40": "1 g @ T+40"},
-    "nutrition_base_v1": "SuperNutrio 2.0 L + Mleko 1.0 L + Whey 60 g + Mango 150 g + Honey 50 g + Dextrose 100 g + Creatine 5 g + Salt 2 g"
-  },
-  "ped_constants": {
-    "oil_baseline": "Test E + NPP weekly (see phase4.json schedule).",
-    "insulin": "NovoRapid 10 IU @ T+0 training days.",
-    "lr3": "70 µg @ T+0 (mutually exclusive with nightly GH).",
-    "gh": "2.5 IU pre-bed when LR3 OFF.",
-    "dbol": "30 mg/day, 4 wks ON / 4 wks OFF; lives in Phase 1 for pre-gym logic."
-  },
-  "pin_rotation_policies": [
-    {"type": "Insulin/LR3", "rule": "Abdomen quadrants UL/UR/LL/LR; each day new quadrant and new clock; LR3 same quadrant different clock."},
-    {"type": "Oils", "rule": "Lock ONE site for Sun→Sat; rotate weekly: Right VG → Left VG → Right DG → Left DG → Right VL → Left VL."}
   ],
-  "blueprint": {
-    "athlete": "Anderson Santos",
-    "note": "Blueprint for proportions/lines; winning is priority if personal strengths deviate.",
-    "metrics_source": "insta-best-guess; update later as needed"
-  },
-  "file_map": {
-    "phase0": "phase0.json",
-    "phase1": "phase1.json",
-    "phase2": "phase2.json",
-    "phase3": "phase3.json",
-    "phase4": "phase4.json",
-    "phase5": "phase5.json",
-    "checkins_ledger": "checkins.json"
-  }
+
+  "MAST__Nutrition_Constants": [
+    {
+      "date": "2025-08-28",
+      "baseline_kcal": 3900,
+      "protein_g": 300,
+      "carbs_g": 473,
+      "fat_g": 90,
+      "fiber_g": "40–45",
+      "notes": "Carb scaler ±25–50 g from baseline. Sat = IIFYM."
+    }
+  ],
+
+  "MAST__PED_Constants": [
+    {
+      "date": "2025-08-28",
+      "insulin": "NovoRapid 10 IU @ T+0 (training days only), zero-fat window T+0→T+180",
+      "LR3": "70 µg @ T+0, mutually exclusive with nightly GH",
+      "GH": "2.5 IU nightly pre-bed (OFF on LR3 days)",
+      "DBOL": "30 mg/day, 4 wks ON / 4 wks OFF"
+    }
+  ],
+
+  "MAST__Pin_Rotation": [
+    {
+      "date": "2025-08-28",
+      "abdomen_quadrants": ["UL","UR","LL","LR"],
+      "oil_rotation_order": [
+        "Right ventrogluteal","Left ventrogluteal",
+        "Right dorsogluteal","Left dorsogluteal",
+        "Right vastus lateralis","Left vastus lateralis"
+      ]
+    }
+  ],
+
+  "MAST__Targets_Anderson": [
+    {
+      "date": "2025-08-28",
+      "arms_inch": 19,
+      "chest_inch": 48,
+      "waist_inch": 30,
+      "notes": "Blueprint for proportions; adapt to genetics where needed."
+    }
+  ],
+
+  "MAST__Runtime_Prompts": [
+    {
+      "date": "2025-08-28",
+      "section": "LOADER",
+      "prompt": "New chats boot by reading master.json → project_instructions.content (for rules/URLs) + MAST__ sections for constants and coverage."
+    }
+    // newer runtime notes will stack above
+  ]
 }
