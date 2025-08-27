@@ -1,0 +1,25 @@
+{
+  "meta": {"version": "1.0", "updated_utc": "2025-08-27T08:30:00Z"},
+  "rules": [
+    "LR3 @ T+0 when ON; GH OFF those nights.",
+    "ZERO dietary fat until T+180.",
+    "Carry ≥30 g fast carbs during 0–90 window.",
+    "LR3 uses same abdomen quadrant as insulin but a different clock point."
+  ],
+  "daily_plan": [
+    {
+      "date":"2025-08-26",
+      "insulin_IU_T0":10,"LR3_ug_T0":70,"gh_IU_bed":null,
+      "abdomen_quadrant":"LL","clock_insulin":9,"clock_lr3":11,
+      "feeds":{"T0":"Dextrose 25 g + salt 1 g","T40":"Whey 60 g + Dextrose 75 g + Creatine 5 g + salt 1 g","T90":"Mleko 1.0 L (plain)"},
+      "fat_zero_until_min":180,"notes":"—"
+    },
+    {
+      "date":"2025-08-25",
+      "insulin_IU_T0":10,"LR3_ug_T0":70,"gh_IU_bed":null,
+      "abdomen_quadrant":"LR","clock_insulin":7,"clock_lr3":10,
+      "feeds":{"T0":"Dextrose 25 g + salt 1 g","T40":"Whey 60 g + Dextrose 75 g + Creatine 5 g + salt 1 g","T90":"Mleko 1.0 L (plain)"},
+      "fat_zero_until_min":180,"notes":"—"
+    }
+  ]
+}
