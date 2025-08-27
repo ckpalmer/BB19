@@ -1,0 +1,33 @@
+{
+  "meta": {"version": "1.0", "updated_utc": "2025-08-27T08:30:00Z"},
+  "pm_supps": [
+    "Thorne 2-Per-Day 1 cap (evening)",
+    "Omega-3 1–1.5 g (evening)",
+    "Berberine HCl 500 mg (evening)",
+    "Telmisartan 40 mg (evening)",
+    "Magnesium glycinate 200–300 mg (bed)",
+    "Minoxidil 5 mg (bed)"
+  ],
+  "ped_toggles_timers": {
+    "dbol": {"state":"OFF","on_from":"2025-07-20","on_to":"2025-08-16","next_state_change":"2025-09-14","dose_mg_per_day":30},
+    "lr3": {"state":"ON"},
+    "gh": {"state":"OFF","note":"starts 2025-08-31 when LR3 OFF"},
+    "insulin": {"rule":"NovoRapid 10 IU @ T+0 training days"}
+  },
+  "oils_schedule_this_week": {
+    "week_monday":"2025-08-25",
+    "THIS_WEEK_SITE":"Right ventrogluteal",
+    "pins":[
+      {"day":"Sun","compounds":"Test E 1.25 ml @300 + NPP 1.75 ml @100"},
+      {"day":"Mon","compounds":"NPP 2.00 ml @100"},
+      {"day":"Wed","compounds":"Test E 1.25 ml @300 + NPP 1.75 ml @100"},
+      {"day":"Fri","compounds":"NPP 2.00 ml @100"}
+    ],
+    "next_week_site":"Left ventrogluteal",
+    "site_rotation_order":"Right VG → Left VG → Right DG → Left DG → Right VL → Left VL"
+  },
+  "pm_stack_logs": [
+    {"date":"2025-08-26","supps_taken":true,"oils_pinned":true,"oils_site":"Right ventrogluteal","oils_detail":"Test E 1.25 ml @300 + NPP 1.75 ml @100","RHR_bpm":69,"notes":""},
+    {"date":"2025-08-25","supps_taken":true,"oils_pinned":false,"oils_site":null,"oils_detail":null,"RHR_bpm":null,"notes":""}
+  ]
+}
