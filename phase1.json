@@ -1,0 +1,18 @@
+[
+  {
+    "date": "2025-08-28",
+    "am_stack": [
+      "Thorne 2-Per-Day 1 cap @ T-30",
+      "Omega-3 1–1.5 g @ T-30",
+      "Berberine HCl 500 mg @ T-30",
+      "Citrulline malate 12 g @ T-30"
+    ],
+    "pre_gym_meal_Tminus30": {
+      "SuperNutrio_ml": 500,
+      "mango_g": 150,
+      "honey_g": 50,
+      "salt_g": 1
+    },
+    "notes": "P1 prints AM stack + pre-gym; DBOL = OFF (per master); use zero-fibre/liquid-friendly timing."
+  }
+]
