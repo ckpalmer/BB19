@@ -1,112 +1,395 @@
 {
-  "meta": {
-    "project_id": "bb19",
-    "version": "2.0",
-    "updated_utc": "2025-08-28T00:00:00Z",
-    "stack_policy": "newest-first"
-  },
-
-  "identity_goal": "Competitive bodybuilder targeting beautiful non-tubey 19-inch arms and a Classic Physique win by Dec 2027; echo Anderson Santos’ proportions as far as genetics allow, but winning is priority #1.",
-
-  "core_rules": [
-    "Coach prescribes; athlete executes. Optimal, not optional.",
-    "Coach may add/change/remove any element (training, diet, supplements, PEDs) if it improves hypertrophy or show readiness.",
-    "Absolute rep targets (no ranges).",
-    "Brutality Law: do not proceed until top set hits target at 0–1 RIR; if missed, escalate immediately (extra set, load bump, RP, partials).",
-    "Every set logs Load(kg), Target reps, Tempo, Rest(min), Hold(s), Stance/Handle, one tight cue. Rest in minutes; loads in kg (never %).",
-    "Straps mandatory on traps/rows/RDLs/heavy pulls where grip could limit the target.",
-    "Saturday = earned rest or bonus coverage; use to close audit gaps."
-  ],
-
-  "project_instructions": {
-    "date": "2025-08-28",
-    "section": "PROJECT_INSTRUCTIONS",
-    "content": "# Bodybuilding Project — Operating Instructions (External Brain Enabled)\n\n## Identity & Goal\n- Athlete: Chris Palmer\n- Coach: ChatGPT (GPT-5)\n- Competitive bodybuilder targeting non-tubey 19-inch arms and a Classic Physique win by Dec 2027.\n- Blueprint: echo Anderson Santos proportions as far as genetics allow.\n- Primary goal = stage-ready victory; matching Anderson = secondary unless it directly helps win.\n\n## External Brain (canonical source of truth)\n- master.json → https://ckpalmer.github.io/BB19/master.json\n- phase0–5.json → https://ckpalmer.github.io/BB19/phase0.json … /phase5.json\n- checkins.json → https://ckpalmer.github.io/BB19/checkins.json\nConvention: all arrays newest-first (index 0 = current state).\n\n## Core Coaching Rules\n- Optimal, not optional.\n- Override authority: coach can change/remove/add anything if it improves hypertrophy or show-readiness.\n- Evidence-driven; brutally honest.\n- Absolute targets only.\n- Brutality Law (must hit top set exact target at 0–1 RIR, escalate if missed).\n- Per-set printout: Load (kg), Target reps, Tempo, Rest (min), Hold, Stance/Handle, coaching cue.\n- Straps mandatory on heavy pulls.\n- Saturday = earned rest or bonus coverage.\n- Questions ≠ changes.\n\n## Hypertrophy Priority\n- All muscle heads must audit ≥9.7 STIM or the week fails.\n- Coverage: chest (upper/mid/lower), delts (front/side/rear), biceps (short/long), triceps (long/lateral/medial), lats (lengthened/shortened), mid-back, erectors, traps, quads, hams, glutes, calves, abs (upper/lower), obliques/serratus.\n\n## Daily Phase Map (P0→P5)\n- P0: Morning check-in.\n- P1: AM stack & pre-gym.\n- P2: Training (Token engine v6).\n- P3: Post-WO insulin + LR3 (T+0/T+40/T+90 feeds, zero-fat window).\n- P4: Evening protocol (PM supps, oils, Move/FatSecret, RHR).\n- P5: Next-day macros (carb scaler, Sat = IIFYM).\n\n## Memory & Scaling\n- Floating Brain = logic + coaching rules.\n- External Brain JSONs = authoritative data (newest-first).\n- Weekly closeout = push JSONs to Pages.\n\n## Error Handling\n- If URL unreachable → \"External Brain TEMP UNAVAILABLE\".\n- If JSON stale → suggest cache-buster (?t=timestamp).\n- If missing phase → \"POLICY VIOLATION — Missing Phase\".\n\n# End of Instructions"
-  },
-
   "MAST__Global_Rules": [
     {
-      "date": "2025-08-28",
-      "rule": "Every phase (P0–P5) must render daily; missing phase = POLICY VIOLATION.",
-      "status": "active"
+      "Key": "Override",
+      "Rule / Value": "If the user suggests sub‑optimal options, override automatically with the best hypertrophy choice."
+    },
+    {
+      "Key": "P4 Delivery",
+      "Rule / Value": "Evening protocol prints one sub‑phase at a time (4.1 → 4.2 → 4.3 → 4.4)."
+    },
+    {
+      "Key": "Saturday Rule",
+      "Rule / Value": "Rest if recovery requires it; otherwise Saturday can be Bonus Full Day. Sunday = full training (oils anchor)."
+    },
+    {
+      "Key": "Zero‑Fat Window",
+      "Rule / Value": "Training days: ZERO dietary fat from T+0 → T+180."
+    },
+    {
+      "Key": "Plates",
+      "Rule / Value": "Prescribe loads in real kg; no % of 1RM programming."
+    },
+    {
+      "Key": "Tempo/Holds",
+      "Rule / Value": "Tempo must be logged; lengthened holds standardised (e.g., :20 stretch at end)."
+    },
+    {
+      "Key": "Token Reuse",
+      "Rule / Value": "Reuse tokens as often as optimal. One token = one logbook. No duplicate tokens for the same movement."
+    },
+    {
+      "Key": "Overload Policy",
+      "Rule / Value": "If plate/stack increments don’t match target, use rest‑pause / lengthened partials / isometric holds to hit EXACT reps."
+    },
+    {
+      "Key": "Targets",
+      "Rule / Value": "Absolute rep targets only in prescriptions. No ranges."
+    },
+    {
+      "Key": "Brutality Enforcement",
+      "Rule / Value": "Each token must reach ≥ 9.7 STIM in its prescription (top/back). If initial sets do not, add sets/partials/rest‑pause until achieved. No session closes below standard."
+    },
+    {
+      "Key": "Brutality",
+      "Rule / Value": "Every working set ≥ 9.7 STIM. If <9.7, that set/session fails and is rebuilt."
+    },
+    {
+      "Key": "Bodybuilder‑Blueprint Preference",
+      "Rule / Value": "Anderson is the aesthetic guide. Winning remains priority #1; we still trend toward his proportions."
+    },
+    {
+      "Key": "Weekly Split Rule",
+      "Rule / Value": "Each week I build the optimal split from tokens to maximise hypertrophy and winning. Train daily if optimal; if a rest day is required for hypertrophy, it falls on Saturday."
+    },
+    {
+      "Key": "Coach Authority",
+      "Rule / Value": "I may add/change/remove anything to maximise hypertrophy and achieve: (1) stage‑ready to win; (2) Anderson blueprint as close as genetics allow. Optimal is NOT optional. You say 'I do'."
     }
-    // add new rules at top, keep history below
   ],
-
   "MAST__Hypertrophy_Scoring": [
     {
-      "date": "2025-08-28",
-      "stimulus_threshold": 9.7,
-      "scoring_logic": "If any audited head < 9.7 STIM, the week fails and must be rebuilt."
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "- Coach Authority allows override to enforce optimality.",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "- Units include upper/lower abs; biceps short/long; triceps lateral/long/medial; traps; etc. See Coverage_Groups.",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "- ANY missed unit auto‑flags week for rebuild.",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Notes",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": null,
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Recovery / Saturday Rule",
+      "Unnamed: 1": "10%",
+      "Unnamed: 2": "Saturday rest/bonus decision matched readiness; DOMS/RHR trends supportive → +1.0; else 0"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Progression / Overload",
+      "Unnamed: 1": "15%",
+      "Unnamed: 2": "≥80% of tokens progressed (load/reps/holds) → full 1.5; else proportional"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Brutality Consistency",
+      "Unnamed: 1": "25%",
+      "Unnamed: 2": "Average brutality across all tokens for the week. If any unit averages <9.7, penalty applied. Scale × 2.5"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Granular Coverage",
+      "Unnamed: 1": "50%",
+      "Unnamed: 2": "Every anatomical unit in Coverage_Groups trained ≥1× this week at ≥9.7. Score = (# units passed ÷ total units) × 5.0"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Component",
+      "Unnamed: 1": "Weight",
+      "Unnamed: 2": "Computation"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "WEEKLY SCORE (0–10) — must be ≥ 9.7 (no averaging away omissions)",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": null,
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Execution Quality",
+      "Unnamed: 1": "15%",
+      "Unnamed: 2": "Tempo adherence + holds logged + rest discipline; perfect +1.5, minor drift +0.5, poor 0"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Weak‑Point Emphasis",
+      "Unnamed: 1": "15%",
+      "Unnamed: 2": "If weak‑point tokens hit at ≥9.7 (lower abs, calves, erectors, lower lats), + up to 1.5; else 0"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Intensity / Brutality",
+      "Unnamed: 1": "40%",
+      "Unnamed: 2": "Average set STIM (0–10) × 0.4; any working set <9.7 incurs −0.3 per miss"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Token Coverage",
+      "Unnamed: 1": "30%",
+      "Unnamed: 2": "All scheduled tokens completed (yes=1, partial=0.5, miss=0). Score = coverage × 3.0"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Component",
+      "Unnamed: 1": "Weight",
+      "Unnamed: 2": "Computation"
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "DAILY SCORE (0–10) — target ≥ 9.7 required for a pass",
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": null,
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Hypertrophy Scoring — DAILY & WEEKLY (Authoritative, Granular Coverage)": "Updated",
+      "Unnamed: 1": "2025-08-26 00:41",
+      "Unnamed: 2": null
     }
   ],
-
   "MAST__Coverage_Groups": [
     {
-      "date": "2025-08-28",
-      "groups": [
-        "chest_upper","chest_mid","chest_lower",
-        "delts_front","delts_side","delts_rear",
-        "biceps_short","biceps_long",
-        "triceps_long","triceps_lateral","triceps_medial",
-        "lats_lengthened","lats_shortened",
-        "midback","erectors","traps",
-        "quads","hams","glutes","calves",
-        "abs_upper","abs_lower","obliques_serratus"
-      ]
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Abs — Lower",
+      "Examples / Typical Tokens": "Hanging leg raise (posterior pelvic tilt)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Abs — Upper",
+      "Examples / Typical Tokens": "Cybex ab machine (crunch pattern)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Calves",
+      "Examples / Typical Tokens": "Standing or seated calf raise"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Glutes",
+      "Examples / Typical Tokens": "Hip thrust; kickback; split squat (glute bias)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Hamstrings",
+      "Examples / Typical Tokens": "Seated/prone curls"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Quads",
+      "Examples / Typical Tokens": "Pendulum / hack squat / leg press"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Triceps — Medial Head",
+      "Examples / Typical Tokens": "Pressdowns / close‑grip lockout emphasis"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Triceps — Long Head",
+      "Examples / Typical Tokens": "Overhead extensions (Panatta seated OH; rope OH)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Triceps — Lateral Head",
+      "Examples / Typical Tokens": "Dips; cable pressdowns (V‑bar/rope)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Biceps — Long Head",
+      "Examples / Typical Tokens": "Bayesian curl; incline DB curl"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Biceps — Short Head",
+      "Examples / Typical Tokens": "Preacher curl; high cable curls"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Delts — Rear",
+      "Examples / Typical Tokens": "Reverse fly (cable/machine); rear‑delt row"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Delts — Side",
+      "Examples / Typical Tokens": "Panatta Multi‑Flight (lateral); DB lateral raise"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Delts — Front",
+      "Examples / Typical Tokens": "Seated/standing shoulder press"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Traps (shrugs)",
+      "Examples / Typical Tokens": "Trap box/hex shrug; Smith shrug"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Back — Upper (rhomboids/mid traps)",
+      "Examples / Typical Tokens": "Seated rows to midline; rear‑delt rows"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Back — Erectors",
+      "Examples / Typical Tokens": "Smith rack pulls; RDL patterns"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Back — Lats",
+      "Examples / Typical Tokens": "Pullover machine; lat‑biased rows"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Chest — Lower",
+      "Examples / Typical Tokens": "Decline fly path (long handles low), dips (chest bias)"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Chest — Mid/Flat",
+      "Examples / Typical Tokens": "HS Converging Flat, Smith Flat, DB/BB Flat"
+    },
+    {
+      "Anatomical Unit (must be hit weekly at ≥9.7)": "Chest — Upper",
+      "Examples / Typical Tokens": "Incline press variants (HS Super Incline, Smith Incline)"
     }
   ],
-
   "MAST__Nutrition_Constants": [
     {
-      "date": "2025-08-28",
-      "baseline_kcal": 3900,
-      "protein_g": 300,
-      "carbs_g": 473,
-      "fat_g": 90,
-      "fiber_g": "40–45",
-      "notes": "Carb scaler ±25–50 g from baseline. Sat = IIFYM."
+      "Item": "Salt Loading",
+      "Value / Notes": "+1 g in T‑30 drink; +1 g at T+40"
+    },
+    {
+      "Item": "Carb Scaler",
+      "Value / Notes": "±25–50 g carbs from baseline based on Move/compliance"
+    },
+    {
+      "Item": "Finish Calories",
+      "Value / Notes": "~20:00"
+    },
+    {
+      "Item": "Fibre",
+      "Value / Notes": "40–45 g/day; heavy fibre before 18:00"
+    },
+    {
+      "Item": "NUTRITION_BASE_V1",
+      "Value / Notes": "SuperNutrio 2.0 L + Mleko 1.0 L + Whey 60 g + Mango 150 g + Honey 50 g + Dextrose 100 g + Creatine 5 g + Salt 2 g"
+    },
+    {
+      "Item": "Baseline Macros (training day)",
+      "Value / Notes": "3,900 kcal | P 300 g / C 473 g / F 90 g"
     }
   ],
-
   "MAST__PED_Constants": [
     {
-      "date": "2025-08-28",
-      "insulin": "NovoRapid 10 IU @ T+0 (training days only), zero-fat window T+0→T+180",
-      "LR3": "70 µg @ T+0, mutually exclusive with nightly GH",
-      "GH": "2.5 IU nightly pre-bed (OFF on LR3 days)",
-      "DBOL": "30 mg/day, 4 wks ON / 4 wks OFF"
+      "Compound": "DBOL",
+      "Weekly Overview (context only)": "30 mg/day 4 wks ON / 4 wks OFF (cycle timer)",
+      "Tracked In": "Phase 4 (PED_Toggles_Timers)",
+      "Notes": "Timers maintained in P4; alerts T‑3/T‑1."
+    },
+    {
+      "Compound": "GH",
+      "Weekly Overview (context only)": "2.5 IU pre‑bed nightly when LR3 OFF",
+      "Tracked In": "Phase 4 (PED_Toggles_Timers)",
+      "Notes": "LR3 and GH mutually exclusive."
+    },
+    {
+      "Compound": "LR3",
+      "Weekly Overview (context only)": "70 µg @ T+0",
+      "Tracked In": "Phase 3 (Daily_Plan)",
+      "Notes": "Same abdomen quadrant as insulin, different clock."
+    },
+    {
+      "Compound": "Insulin (NovoRapid)",
+      "Weekly Overview (context only)": "10 IU @ T+0 on training days",
+      "Tracked In": "Phase 3 (Daily_Plan)",
+      "Notes": "Carry ≥30 g fast carbs; zero‑fat window enforced."
+    },
+    {
+      "Compound": "NPP",
+      "Weekly Overview (context only)": "750 mg/week via Sun (175) + Mon (200) + Wed (175) + Fri (200) mg",
+      "Tracked In": "Phase 4 (Oils_Schedule)",
+      "Notes": "Info only; details in P4."
+    },
+    {
+      "Compound": "Test E",
+      "Weekly Overview (context only)": "750 mg/week via Sun + Wed (1.25 ml @300 mg/ml each)",
+      "Tracked In": "Phase 4 (Oils_Schedule)",
+      "Notes": "Do not duplicate dosing here; info only."
     }
   ],
-
   "MAST__Pin_Rotation": [
     {
-      "date": "2025-08-28",
-      "abdomen_quadrants": ["UL","UR","LL","LR"],
-      "oil_rotation_order": [
-        "Right ventrogluteal","Left ventrogluteal",
-        "Right dorsogluteal","Left dorsogluteal",
-        "Right vastus lateralis","Left vastus lateralis"
-      ]
+      "Type": "Oils",
+      "Authoritative Site Rotation Policy": "One site locked per week (Sun→Sat). Week‑to‑week rotation: Right ventrogluteal → Left ventrogluteal → Right dorsogluteal → Left dorsogluteal → Right vastus lateralis → Left vastus lateralis."
+    },
+    {
+      "Type": "Insulin/LR3",
+      "Authoritative Site Rotation Policy": "Abdomen 4 quadrants (UL, UR, LL, LR); each day use a new quadrant and new clock point; never reuse exact puncture point within week."
     }
   ],
-
   "MAST__Targets_Anderson": [
     {
-      "date": "2025-08-28",
-      "arms_inch": 19,
-      "chest_inch": 48,
-      "waist_inch": 30,
-      "notes": "Blueprint for proportions; adapt to genetics where needed."
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Rule Note",
+      "Unnamed: 1": "Blueprint guides decisions. **Winning is priority #1**; if emphasising your strengths raises win probability, we prioritise that while trending toward these proportions.",
+      "Unnamed: 2": null
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": null,
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Abs (qual.)",
+      "Unnamed: 1": "Deep upper; lower visible",
+      "Unnamed: 2": "Maintain vacuum and lower‑block visibility"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Back (qual.)",
+      "Unnamed: 1": "High V‑taper; good lower‑lat sweep",
+      "Unnamed: 2": "Add density while protecting taper"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Calves (in)",
+      "Unnamed: 1": "16–16.5",
+      "Unnamed: 2": "Balanced to quads; not standout"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Quads (in)",
+      "Unnamed: 1": "≈25",
+      "Unnamed: 2": "Full sweep without excessive bulk"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Waist (in)",
+      "Unnamed: 1": "≈29 (vacuum)",
+      "Unnamed: 2": "Tight waist is key to his look"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Chest (in)",
+      "Unnamed: 1": "47–48",
+      "Unnamed: 2": "Dense upper chest; wide clavicles"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Arms (in)",
+      "Unnamed: 1": "18.5–19.0",
+      "Unnamed: 2": "Round biceps/triceps; aesthetic not freaky"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Stage Weight",
+      "Unnamed: 1": "84–89 kg (185–195 lb)",
+      "Unnamed: 2": "Within typical classic cap for this height"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Height",
+      "Unnamed: 1": "175–178 cm (~5'9\"–5'10\")",
+      "Unnamed: 2": "Classic physique comparable height range"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Metric",
+      "Unnamed: 1": "Target",
+      "Unnamed: 2": "Notes"
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": null,
+      "Unnamed: 1": null,
+      "Unnamed: 2": null
+    },
+    {
+      "Anderson Blueprint — Target Anthropometrics (Best‑Guess; guide, not law)": "Updated",
+      "Unnamed: 1": "2025-08-26 00:41",
+      "Unnamed: 2": null
     }
   ],
-
-  "MAST__Runtime_Prompts": [
-    {
-      "date": "2025-08-28",
-      "section": "LOADER",
-      "prompt": "New chats boot by reading master.json → project_instructions.content (for rules/URLs) + MAST__ sections for constants and coverage."
-    }
-    // newer runtime notes will stack above
-  ]
+  "MAST__Runtime_Prompts": []
 }
